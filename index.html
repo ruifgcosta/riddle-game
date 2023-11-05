@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Open the Lock</title>
+		<link rel="stylesheet" href="index-style.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="res/favicon.png" />
+		<script type="text/javascript" src="generateNew.js"></script>
+		<script type="text/javascript" src="interactions.js"></script>
+	</head>
+
+	<body onload="generateNew()">
+		<!--Intro-->
+		<div id="intro" class="intro">
+			<h1>OPEN THE LOCK</h1>
+			<span>Test yourself! Simple yet challenging!</span>
+		</div>
+
+		<!--Header-->
+		<div class="header">
+			<span id="headerLabel">CAN YOU OPEN THE LOCK?</span>
+		</div>
+
+		<section class="wrapper">
+			<div class="rulesHints">
+				<div class="description">HINTS</div>
+				<div class="list">
+					<ul>
+						<li>
+							<span class="hint-txt" style="color: #4caf50">2 CORRECT BUT WRONG PLACED</span>
+							<span class="hint-nmbr" id="hint1">0 0 0</span>
+						</li>
+						<li>
+							<span class="hint-txt" style="color: #ccdb39">1 CORRECT AND WELL PLACED</span>
+							<span class="hint-nmbr" id="hint2">0 0 0</span>
+						</li>
+						<li>
+							<span class="hint-txt" style="color: #fec007">1 CORRECT BUT WRONG PLACED</span>
+							<span class="hint-nmbr" id="hint3">0 0 0</span>
+						</li>
+						<li>
+							<span class="hint-txt" style="color: #fe7a07">1 CORRECT BUT WRONG PLACED</span>
+							<span class="hint-nmbr" id="hint4">0 0 0</span>
+						</li>
+						<li>
+							<span class="hint-txt" style="color: #f44336">NOTHING IS CORRECT</span>
+							<span class="hint-nmbr" id="hint5">0 0 0</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="lock">
+				<div class="lock-animation" id="lockAnimation">
+					<div class="lock-base">
+						<!--Enter Code-->
+						<input type="number" id="guess1" autofocus="autofocus" oninput="onCodeInput(1)" onkeydown="return event.keyCode !== 69" placeholder="0" />
+						<input type="number" id="guess2" autofocus="autofocus" oninput="onCodeInput(2)" onkeydown="return event.keyCode !== 69" placeholder="0" />
+						<input type="number" id="guess3" autofocus="autofocus" oninput="onCodeInput(3)" onkeydown="return event.keyCode !== 69" placeholder="0" />
+					</div>
+				</div>
+			</div>
+			<div class="podium">
+				<div class="description">BEST QUALIFIED</div>
+				<div class="list">
+					<ul>
+						<li class="firstPlace">
+							<span class="podium-position">1.</span>
+							<span class="podium-name">Work in progress..</span>
+							<span class="podium-time">0m00s</span>
+						</li>
+						<li class="secondPlace">
+							<span class="podium-position">2.</span>
+							<span class="podium-name">Work in progress..</span>
+							<span class="podium-time">0m00s</span>
+						</li>
+						<li class="thirdPlace">
+							<span class="podium-position">3.</span>
+							<span class="podium-name">Work in progress..</span>
+							<span class="podium-time">0m00s</span>
+						</li>
+						<li class="placed">
+							<span class="podium-position">4.</span>
+							<span class="podium-name">Work in progress..</span>
+							<span class="podium-time">0m00s</span>
+						</li>
+						<li class="placed">
+							<span class="podium-position">5.</span>
+							<span class="podium-name">Work in progress..</span>
+							<span class="podium-time">0m00s</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!--Continue Button-->
+		<button onclick="checkCode()" id="checkCodeButton" class="check-code-button">Check Code</button>
+		<button onclick="generateNew()" id="continueButton" class="continue-button">Continue</button>
+		<!--Footer-->
+		<footer class="footer">
+			<span id="answerLabel" onclick="revealAnswer()">Reveal Answer</span>
+		</footer>
+	</body>
+</html>
